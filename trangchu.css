@@ -1,0 +1,270 @@
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:Arial, Helvetica, sans-serif;
+}
+
+html{
+  scroll-behavior:smooth;
+}
+
+body{
+  background:#0a0a0a;
+  color:white;
+  overflow-x:hidden;
+}
+
+#menu{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:20px 60px;
+  background:#111111;
+  border-bottom:2px solid #ff0000;
+  position:sticky;
+  top:0;
+  z-index:1000;
+}
+
+.logo{
+  color:#ff0000;
+  font-size:35px;
+  font-weight:bold;
+}
+
+nav ul{
+  display:flex;
+  gap:30px;
+  list-style:none;
+}
+
+nav a{
+  color:white;
+  text-decoration:none;
+  font-size:17px;
+  transition:0.3s;
+}
+
+nav a:hover{
+  color:#ff0000;
+  text-decoration:none;
+}
+
+#gioithieu{
+  height:100vh;
+  background-image:
+    linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.85)),
+    url("./image/anhnen.jpg");
+  background-size:cover;
+  background-position:center;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  text-align:center;
+  padding:20px;
+}
+
+.overlay{
+  max-width:700px;
+}
+
+.tieu-de{
+  font-size:55px;
+  margin-bottom:20px;
+  color:#ff0000;
+}
+
+.mo-ta{
+  font-size:20px;
+  color:#d8d8d8;
+  line-height:35px;
+  margin-bottom:30px;
+}
+
+.nut{
+  display:flex;
+  justify-content:center;
+  gap:20px;
+}
+.btn {
+  padding: 14px 30px;
+  border: none;
+  background: #ff0000;
+  color: white;
+  font-size: 16px;
+  font-weight: bold;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: 0.3s;
+  text-decoration: none;
+}
+
+.btn a {
+  color: inherit;
+  text-decoration: none;
+  display: inline-block;
+  width: 100%;
+  height: 100%;
+}
+
+.btn:hover {
+  background: white;
+  color: #ff0000;
+}
+
+.btn:hover a {
+  color: #ff0000;
+}
+
+
+#sanpham{
+  padding:70px 60px;
+  background:#0d0d0d;
+}
+
+.ds-sp{
+  display:flex;
+  gap:25px;
+  margin-top:40px;
+}
+
+.sp{
+  background:#151515;
+  padding:20px;
+  border-radius:15px;
+  text-align:center;
+  width:100%;
+  transition:0.3s;
+  border:1px solid #222;
+}
+
+.sp:hover{
+  transform:translateY(-10px);
+  box-shadow:0 0 20px #ff0000;
+}
+
+.sp img{
+  width:100%;
+  height:250px;
+  object-fit:cover;
+  border-radius:12px;
+  margin-bottom:15px;
+}
+
+.sp h3{
+  font-size:28px;
+  color:#ff0000;
+  margin-bottom:10px;
+}
+
+.sp p{
+  margin:8px 0;
+  color:#d8d8d8;
+}
+
+.gia{
+  font-size:30px;
+  font-weight:bold;
+  color:#00ff88 !important;
+  margin:18px 0;
+}
+
+#khuyenmai{
+  padding:70px 60px;
+  background:#111111;
+}
+
+.uu-dai{
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:20px;
+  margin-top:40px;
+}
+
+.deal{
+  background:#181818;
+  padding:30px;
+  border-left:5px solid #ff0000;
+  border-radius:12px;
+  font-size:20px;
+  transition:0.3s;
+}
+
+.deal:hover{
+  transform:scale(1.03);
+  box-shadow:0 0 15px #ff0000;
+}
+
+#chantrang{
+  background:#0b0b0b;
+  padding:30px;
+  text-align:center;
+  line-height:35px;
+  color:#bfbfbf;
+  border-top:2px solid #ff0000;
+}
+
+@media(max-width:1000px){
+  #menu{
+    flex-direction:column;
+    gap:20px;
+    padding:20px;
+  }
+  nav ul{
+    flex-wrap:wrap;
+    justify-content:center;
+    gap:15px;
+  }
+  .ds-sp{
+    flex-direction:column;
+  }
+  .uu-dai{
+    grid-template-columns:1fr;
+  }
+  .tieu-de{
+    font-size:40px;
+  }
+  .mo-ta{
+    font-size:18px;
+  }
+}
+
+.timkiem{
+  display:flex;
+  align-items:center;
+  gap:10px;
+}
+
+.timkiem input{
+  width:250px;
+  padding:12px 15px;
+  border:none;
+  outline:none;
+  border-radius:8px;
+  background:#1a1a1a;
+  color:white;
+  font-size:15px;
+  border:1px solid #333;
+}
+
+.timkiem input:focus{
+  border:1px solid #ff0000;
+  box-shadow:0 0 10px #ff0000;
+}
+
+.timkiem button{
+  padding:12px 20px;
+  border:none;
+  background:#ff0000;
+  color:white;
+  font-weight:bold;
+  border-radius:8px;
+  cursor:pointer;
+  transition:0.3s;
+}
+
+.timkiem button:hover{
+  background:white;
+  color:black;
+}

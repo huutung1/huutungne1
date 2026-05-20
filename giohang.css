@@ -1,0 +1,120 @@
+body{
+  background:#0a0a0a;
+  color:white;
+  font-family:Arial, sans-serif;
+}
+
+#menu{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:20px 60px;
+  background:#111;
+  border-bottom:2px solid #ff0000;
+}
+
+.logo{
+  color:#ff0000;
+  font-size:30px;
+  font-weight:bold;
+}
+
+nav ul{
+  display:flex;
+  gap:25px;
+  list-style:none;
+}
+
+nav a{
+  color:white;
+  text-decoration:none;
+  transition:0.3s;
+}
+
+nav a:hover{
+  color:#ff0000;
+  text-decoration:none;
+}
+
+.cart-container{
+  max-width:900px;
+  margin:50px auto;
+  background:#1a1a1a;
+  padding:30px;
+  border-radius:10px;
+  border:2px solid #b30000;
+  box-shadow:0 0 15px rgba(255,0,0,0.4);
+}
+
+.cart-container h2{
+  text-align:center;
+  color:#ff0000;
+  margin-bottom:20px;
+}
+
+.cart-table{
+  width:100%;
+  border-collapse:collapse;
+  margin-bottom:20px;
+}
+
+.cart-table th, .cart-table td{
+  border:1px solid #333;
+  padding:12px;
+  text-align:center;
+}
+
+.cart-table th{
+  background:#222;
+  color:#ff0000;
+}
+
+.cart-table td input{
+  width:60px;
+  padding:5px;
+  text-align:center;
+  background:#222;
+  border:1px solid #b30000;
+  color:white;
+  border-radius:5px;
+}
+
+.cart-summary{
+  text-align:right;
+  font-size:18px;
+}
+
+.cart-summary .total{
+  font-weight:bold;
+  color:#00ff88;
+}
+
+button{
+  padding:8px 15px;
+  background:#b30000;
+  border:none;
+  border-radius:5px;
+  color:white;
+  cursor:pointer;
+  transition:0.3s;
+}
+
+button:hover{
+  background:#ff0000;
+}
+#checkout-btn{
+  margin-top:15px;
+  padding:12px 25px;
+  background:#ff0000;
+  border:none;
+  border-radius:8px;
+  color:white;
+  font-weight:bold;
+  cursor:pointer;
+  transition:0.3s;
+}
+
+#checkout-btn:hover{
+  background:white;
+  color:black;
+}

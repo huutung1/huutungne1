@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ASUS Zenbook S14 UX5406AA-SU415WS</title>
+    <link rel="stylesheet" href="sanpham.css" />
+  </head>
+  <body>
+    <header id="menu">
+      <a class="back-link" href="danhsachsanpham.html">←Quay lại</a>
+      <h1 class="logo">TECHRED</h1>
+      <nav>
+        <ul>
+          <li><a href="trangchu.html">Trang Chủ</a></li>
+          <li><a href="dndk.html">Đăng Nhập/Đăng Kí</a></li>
+          <li><a href="gh.html">Giỏ Hàng</a></li>
+          <li><a href="cskh.html">Chăm Sóc Khách Hàng</a></li>
+          <li><a href="tonghoplab.html">Bài Tập</a></li>
+          <li><a href="lienhe.html">Liên Hệ</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main class="product-container">
+      <h2>ASUS Zenbook S14 UX5406AA-SU415WS</h2>
+      <img
+        src="./imageddsp/zenbook14.jpg"
+        alt="ASUS Zenbook 14 UX3405CA-ST628W"
+        class="product-img"
+      />
+      <ul class="specs">
+        <li>CPU: Intel® Core™ Ultra 5</li>
+        <li>RAM: 16GB LPDDR5X</li>
+        <li>Ổ cứng: 512GB M.2 NVMe™ PCIe® 4.0 SSD</li>
+      </ul>
+      <p class="price">35.190.000₫</p>
+      <button
+        class="them"
+        onclick="addToCart('ASUS Zenbook 14 UX3405CA-ST628W', 35190000)"
+      >
+        Thêm Vào Giỏ Hàng
+      </button>
+    </main>
+  </body>
+  <script>
+    function addToCart(name, price) {
+      let cart = JSON.parse(localStorage.getItem("cart")) || [];
+      let item = cart.find((p) => p.name === name);
+      if (item) {
+        item.quantity++;
+      } else {
+        cart.push({ name, price, quantity: 1 });
+      }
+      localStorage.setItem("cart", JSON.stringify(cart));
+      alert("Đã thêm vào giỏ hàng!");
+    }
+  </script>
+</html>

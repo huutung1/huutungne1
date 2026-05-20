@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ASUS Zenbook S14 UX5406AA-SU415WS</title>
+    <link rel="stylesheet" href="sanpham.css" />
+  </head>
+  <body>
+    <header id="menu">
+      <a class="back-link" href="danhsachsanpham.html">←Quay lại</a>
+      <h1 class="logo">TECHRED</h1>
+      <nav>
+        <ul>
+          <li><a href="trangchu.html">Trang Chủ</a></li>
+          <li><a href="dndk.html">Đăng Nhập/Đăng Kí</a></li>
+          <li><a href="gh.html">Giỏ Hàng</a></li>
+          <li><a href="cskh.html">Chăm Sóc Khách Hàng</a></li>
+          <li><a href="tonghoplab.html">Bài Tập</a></li>
+          <li><a href="lienhe.html">Liên Hệ</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main class="product-container">
+      <h2>ASUS Zenbook S14 UX5406AA-SU415WS</h2>
+      <img
+        src="./imageddsp/zendou.jpg"
+        alt="ASUS Zenbook DUO UX8406"
+        class="product-img"
+      />
+      <ul class="specs">
+        <li>GPU: NVIDIA® GeForce RTX™ 5060 8GB</li>
+        <li>RAM lên đến 32 GB LPDDR5x</li>
+        <li>Ổ cứng: 1TB SSD M.2 NVMe™ PCIe® 4.0</li>
+      </ul>
+      <p class="price">48.590.000₫</p>
+      <button
+        class="them"
+        onclick="addToCart('ASUS Zenbook DUO UX8406', 48590000)"
+      >
+        Thêm Vào Giỏ Hàng
+      </button>
+    </main>
+  </body>
+  <script>
+    function addToCart(name, price) {
+      let cart = JSON.parse(localStorage.getItem("cart")) || [];
+      let item = cart.find((p) => p.name === name);
+      if (item) {
+        item.quantity++;
+      } else {
+        cart.push({ name, price, quantity: 1 });
+      }
+      localStorage.setItem("cart", JSON.stringify(cart));
+      alert("Đã thêm vào giỏ hàng!");
+    }
+  </script>
+</html>

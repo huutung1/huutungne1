@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Giỏ Hàng - TECHRED</title>
+    <link rel="stylesheet" href="giohang.css" />
+  </head>
+  <body>
+    <header id="menu">
+      <h1 class="logo">TECHRED</h1>
+      <nav>
+        <ul>
+          <li><a href="trangchu.html">Trang Chủ</a></li>
+          <li><a href="dndk.html">Đăng Nhập/Đăng Kí</a></li>
+          <li><a href="gh.html">Giỏ Hàng</a></li>
+          <li><a href="cskh.html">Chăm Sóc Khách Hàng</a></li>
+          <li><a href="tonghoplab.html">Bài Tập</a></li>
+          <li><a href="lienhe.html">Liên Hệ</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main class="cart-container">
+      <h2>Giỏ Hàng</h2>
+      <table class="cart-table">
+        <thead>
+          <tr>
+            <th>Sản phẩm</th>
+            <th>Giá</th>
+            <th>Số lượng</th>
+            <th>Thành tiền</th>
+            <th>Hành động</th>
+          </tr>
+        </thead>
+        <tbody id="cart-body"></tbody>
+      </table>
+      <div class="cart-summary">
+          <p>Tổng cộng: <span id="cart-total">0₫</span></p>
+          <button id="checkout-btn">Thanh toán</button>
+      </div>
+    </main>
+
+    <script>
+      let cart = JSON.parse(localStorage.getItem("cart")) || [];
+
+      function addToCart(name, price) {
+        let item = cart.find((p) => p.name === name);
+        if (item) {
+          item.quantity++;
+        } else {
+          cart.push({ name, price, quantity: 1 });
+        }
+        saveCart();
+        renderCart();
+      }
+
+      function renderCart() {
+        const tbody = document.getElementById("cart-body");
+        tbody.innerHTML = "";
+        let total = 0;
+        cart.forEach((item, index) => {
+          let thanhTien = item.price * item.quantity;
+          total += thanhTien;
+          tbody.innerHTML += `
+          <tr>
+            <td>${item.name}</td>
+            <td>${item.price.toLocaleString()}₫</td>
+            <td>
+              <input type="number" min="1" value="${item.quantity}" 
+                onchange="updateQuantity(${index}, this.value)">
+            </td>
+            <td>${thanhTien.toLocaleString()}₫</td>
+            <td><button onclick="removeItem(${index})">Xóa</button></td>
+          </tr>
+        `;
+        });
+        document.getElementById("cart-total").innerText =
+          total.toLocaleString() + "₫";
+      }
+
+      function updateQuantity(index, value) {
+        cart[index].quantity = parseInt(value);
+        saveCart();
+        renderCart();
+      }
+
+      function removeItem(index) {
+        cart.splice(index, 1);
+        saveCart();
+        renderCart();
+      }
+
+      function saveCart() {
+        localStorage.setItem("cart", JSON.stringify(cart));
+      }
+
+      renderCart();
+      document
+        .getElementById("checkout-btn")
+        .addEventListener("click", function () {
+          if (cart.length === 0) {
+            alert("Giỏ hàng trống, không thể thanh toán!");
+          } else {
+            alert("Thanh toán thành công! Cảm ơn bạn đã mua hàng.");
+            cart = [];
+            localStorage.removeItem("cart");
+            renderCart();
+          }
+        });
+    </script>
+  </body>
+</html>
